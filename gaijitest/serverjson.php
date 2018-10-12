@@ -5,7 +5,7 @@ $obj = json_decode($json_str);
 
 try{
     $user = "root";
-    $pass = "NAKAMURA199857ks!!!";
+    $pass = "";
     $pdo = new PDO("mysql:host=127.0.0.1;dbname=salesioproapp2018;charset=utf8", $user, $pass);
     $student_id = $obj->student_id;
     $absent_day = date("Y-m-d", strtotime($obj->absent_day));
