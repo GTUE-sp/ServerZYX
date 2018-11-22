@@ -30,7 +30,7 @@ if(isset($_POST["SIGNUP"])){
 					$Errflag=1;	//スマートと程遠い力技 要改善
 				}
 			}if(!isset($Errflag)){
-				$sql ="insert into teacher(username,password) values(':usr',':pas')";//IDはauto_incrementで勝手に入る
+				$sql ="insert into teacher(username,password) values(:usr,:pas)";//IDはauto_incrementで勝手に入る
 				$stmt=$ffftp->prepare($sql);
 				$stmt->bindValue(":usr",$new_usr,PDO::PARAM_STR);
 				$stmt->bindValue(":pas",$new_pas,PDO::PARAM_STR);
