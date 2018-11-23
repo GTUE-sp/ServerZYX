@@ -12,7 +12,7 @@ if(isset($_POST["SIGNUP"])){
 	$chk_pas = $_POST["PASSchk"];
 /*	DB接続	*/
 	
-	if($new_pas!=$chk_pas){
+	if($new_pas !== $chk_pas){
 		print('<p>Error:ユーザの新規作成に失敗しました<br>
 		パスワードをもう一度確認してください</p>');
 
@@ -24,10 +24,10 @@ if(isset($_POST["SIGNUP"])){
 	
 			$sql="select username from teacher";
 			foreach($ffftp->query($sql) as $row){
-				if($new_usr==$row["username"]){
+				if($new_usr === $row["username"]){
 					print("<p>Error:ユーザの新規作成に失敗しました<br>
 					そのユーザIDはすでに使用されています</p>");
-					$Errflag=1;	//スマートと程遠い力技 要改善
+					$Errflag = 1;	//スマートと程遠い力技 要改善
 				}
 			}if(!isset($Errflag)){
 				$sql ="insert into teacher(username,password) values(:usr,:pas)";//IDはauto_incrementで勝手に入る
@@ -37,7 +37,7 @@ if(isset($_POST["SIGNUP"])){
 				$stmt->execute();
 				
 	
-				$_SESSION["name"]=$new_usr;
+				$_SESSION["name"] = $new_usr;
 				print("ユーザ登録に成功しました<br>
 				<a href='main.php'>こちら</a>のリンクより移動してください");
 				exit(1);

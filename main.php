@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION["name"])){	/*ログインしていないとき*/
-	header("location: login.php");
+	header("location: index.php");
 }
 
 

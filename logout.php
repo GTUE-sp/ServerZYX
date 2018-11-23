@@ -11,7 +11,8 @@ session_destroy();
 </head>
 <body>
 
-ログアウトしました
+ログアウトしました<br>
+<a href="index.php">戻る</a>
 	
 <body>
 <html>
