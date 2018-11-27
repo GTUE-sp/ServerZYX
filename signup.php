@@ -24,7 +24,7 @@ if(isset($_POST["SIGNUP"])){
 	
 			$sql="select username from teacher";
 			foreach($ffftp->query($sql) as $row){
-				if($new_usr === $row["username"]){
+				if(strtolower($new_usr) === $row["username"]){
 					print("<p>Error:ユーザの新規作成に失敗しました<br>
 					そのユーザIDはすでに使用されています</p>");
 					$Errflag = 1;	//スマートと程遠い力技 要改善
