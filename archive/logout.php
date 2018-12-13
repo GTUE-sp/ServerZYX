@@ -8,7 +8,6 @@ session_destroy();
 <head>
 	<meta charset="UTF-8">
 	<title>LOGOUT</title>
-	<link rel="stylesheet" type="text/css" href="phphp.css">
 </head>
 <body>
 

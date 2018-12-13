@@ -11,11 +11,11 @@ if(isset($_POST["SIGNUP"])){
 	$new_pas = $_POST["PASS"];
 	$chk_pas = $_POST["PASSchk"];
 /*	DB接続	*/
-
-
+	
 	if($new_pas !== $chk_pas){
 		print('<p>Error:ユーザの新規作成に失敗しました<br>
-		パスワード[確認]の値が不正です</p>');
+		パスワードをもう一度確認してください</p>');
+
 	}else{
 		include "db_ac.php";	//接続先dbの取得
 		try{
@@ -58,31 +58,23 @@ if(isset($_POST["SIGNUP"])){
 <head>
 	<meta charset="UTF-8">
 	<title>SIGN UP</title>
-	<link rel="stylesheet" type="text/css" href="phphp.css">
-	<script type="text/javascript" src="jdjkjc.js"></script>
 </head>
 <body>
 	<h1>新規登録</h1>
 	<form id="loginform" name="loginform" action="" method="POST">
 		<fieldset>
 			<legend>登録フォーム</legend>
-				<label>ユーザID</label>
-			<input required type="text" name="ID" placeholder="write it" size=32 
-					pattern="^[0-9A-Za-z]+$" onkeyup="UsrIdLength(value);" maxlength=32>
-			<span class="getc" id="uid_length">0文字</span>
+			<label>ユーザID</label>
+			<input required type="text" name="ID" placeholder="write it" pattern="^[0-9A-Za-z]+$" maxlength=32>
 			<br>
-				<label>パスワード</label>
-			<input required type="password" name="PASS" placeholder="write it" size=32 
-					pattern="^[0-9A-Za-z]+$" onkeyup="PassLength(value);" maxlength=32>
-			<span class="getc" id="p_length">0文字</span>
+			<label>パスワード</label>
+			<input required type="password" name="PASS" placeholder="write it" pattern="^[0-9A-Za-z]+$" maxlength=32>
 			<br>
-				<label>パスワード[確認]</label>
-			<input required type="password" name="PASSchk" placeholder="write it" size=32 
-					pattern="^[0-9A-Za-z]+$" onkeyup="PassChkLength(value);" maxlength=32>
-			<span class="getc" id="pc_length">0文字</span>
+			<label>パスワード[確認]</label>
+			<input required type="password" name="PASSchk" placeholder="write it"  pattern="^[0-9A-Za-z]+$" maxlength=32>
 			<br>
 			<input type="submit" name="SIGNUP" value="sign up">
-			<div class="CAUTION">[※すべて半角英数のみ 32文字まで]</div>
+			<font size=-1 color=red>[※すべて半角英数のみ 32文字まで]</font>
 		</fieldset>
 	</form>
 	<br>

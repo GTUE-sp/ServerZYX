@@ -52,7 +52,6 @@ if(isset($_POST["LOGIN"])){
 <head>
 	<meta charset="UTF-8">
 	<title>LOGIN</title>
-	<link rel="stylesheet" type="text/css" href="phphp.css">
 </head>
 <body>
 	<h1>login</h1>
