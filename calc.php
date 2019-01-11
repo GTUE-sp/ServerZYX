@@ -13,7 +13,7 @@ try{
     $pdo = new PDO("mysql:host=127.0.0.1;dbname=salesioproapp2018;charset=utf8", $user, $pass);
     $startday = date("Y-m-d", strtotime($_POST["start"]));
     $endday = date("Y-m-d", strtotime($_POST["end"]));
-    $sql = "SELECT * FROM attendance WHERE absent_day >= :startday AND absent_day <= :endday;";
+    $sql = "SELECT * FROM attendance WHERE absent_day >= :startday AND absent_day <= :endday; ORDER BY student_id";
     $stmt = $pdo->prepare($sql);
     $stmt -> bindValue(":startday", $startday, PDO::PARAM_STR);
     $stmt -> bindValue(":endday", $endday, PDO::PARAM_STR);
