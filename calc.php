@@ -1,22 +1,22 @@
 <?php
 
-//$week = array("日", "月", "火", "水", "木", "金", "土");
-$stunum = array("14501");
-for ($i = 1; $i < 60; $i++) {
-    $stunum = array_merge($stunum, array(strval(14501 + $i)));
-}
-//var_dump($stunum);
-//echo("<br>");
+$stunum = array("00000");
 try{
     $user = "proapp5cs2018";
     $pass = "";
     $pdo = new PDO("mysql:host=127.0.0.1;dbname=salesioproapp2018;charset=utf8", $user, $pass);
+    $sql = "SELECT student_id FROM student";
+    $stmt = $pdo->prepare($sql);
+    $stmt -> execute();
+    while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
+        $stunum = array_merge($stunum, array($row["student_id"]));
+    }
     $startday = date("Y-m-d", strtotime($_POST["start"]));
     $endday = date("Y-m-d", strtotime($_POST["end"]));
     //$sql = "SELECT * FROM attendance WHERE absent_day >= :startday AND absent_day <= :endday ORDER BY cast(student_id as signed)";
     //$sql = "SELECT * FROM attendance WHERE absent_day >= :startday AND absent_day <= :endday ORDER BY student_id";
     echo("00000 0 1 2 3 4 5 6 7 8 9<br>");
-    for ($i = 0; $i < 60; $i++) {
+    for ($i = 1; $i < count($stunum); $i++) {
         $sql = "SELECT * FROM attendance WHERE absent_day >= :startday AND absent_day <= :endday AND student_id = :student";
         $stmt = $pdo->prepare($sql);
         $stmt -> bindValue(":startday", $startday, PDO::PARAM_STR);
