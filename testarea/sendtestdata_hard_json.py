@@ -1,4 +1,6 @@
 #coding utf-8
+#動かすな
+'''
 import urllib.request
 import urllib.parse
 import json
@@ -31,3 +33,5 @@ for i in json_datas:
         status = response.getcode()
         print("Status code: " + str(status))
         print(response.info())
+
+'''
