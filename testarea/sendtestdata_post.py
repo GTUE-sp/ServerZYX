@@ -6,7 +6,7 @@ import getpass
 
 #DBpass = getpass.getpass(prompt="DB password:")
 
-num = 5
+num = 3
 
 url = "http://localhost:8000/insert.php"
 st_id = ["14523", "14543", "14525", "14513"]
