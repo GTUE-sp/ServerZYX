@@ -1,0 +1,9 @@
+.name {
+	writing-mode: tb-rl; /* IE用 */
+	writing-mode: vertical-rl; /* Chrome、Firefox用 */
+	margin: 0 auto;
+	white-space: nowrap;
+	width: 1em; /* firefox対策 */
+	line-height: 1em; /* firefox対策 */
+	text-orientation: upright;
+}

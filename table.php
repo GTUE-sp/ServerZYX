@@ -15,10 +15,10 @@ try{
 	$ffftp = new PDO($dsn, $usr, $pas);
 	$ffftp->query('SET NAMES utf8');
 
-	$sql="select username from student";
+	$sql = "SELECT * from student";
 	foreach($ffftp->query($sql) as $row){
-		$row["student_id"];
-		$row["name"];
+		echo($row["student_id"]." ");
+		echo($row["name"]."<br>");
 
 	}
 }catch (PDOException $e){
