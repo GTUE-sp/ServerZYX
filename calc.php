@@ -15,7 +15,7 @@ try{
     $endday = date("Y-m-d", strtotime($_POST["end"]));
     //$sql = "SELECT * FROM attendance WHERE absent_day >= :startday AND absent_day <= :endday ORDER BY cast(student_id as signed)";
     //$sql = "SELECT * FROM attendance WHERE absent_day >= :startday AND absent_day <= :endday ORDER BY student_id";
-    echo("00000 0 1 2 3 4 5 6 7 8 9<br>");
+    //echo("00000 0 1 2 3 4 5 6 7 8 9<br>");
     for ($i = 1; $i < count($stunum); $i++) {
         $sql = "SELECT * FROM attendance WHERE absent_day >= :startday AND absent_day <= :endday AND student_id = :student";
         $stmt = $pdo->prepare($sql);

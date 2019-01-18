@@ -35,7 +35,8 @@ try{
     $stmt -> bindValue(":class9", $class9, PDO::PARAM_STR);
     $stmt -> bindValue(":remarks", $remarks, PDO::PARAM_STR);
     $stmt -> execute();
-    echo("Done.");
+    //echo("Done.");
+    header("location: main.php");
 
 }
 catch(PDOException $e){
