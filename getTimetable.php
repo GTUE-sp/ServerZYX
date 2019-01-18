@@ -5,8 +5,11 @@ try{
     $pass = "";
     $pdo = new PDO("mysql:host=127.0.0.1;dbname=salesioproapp2018;charset=utf8", $user, $pass);
     //$test = $_POST["test"];
-    $sql = "SELECT `student_id`,`name` FROM `student`;";
+    $day = strval(date("w"));
+	$week = array("0","1","2","3","4","5","6");
+	$sql = "SELECT * FROM `class` WHERE id = :d";
     $stmt = $pdo->prepare($sql);
+    $stmt -> bindValue(":d", $week[$day], PDO::PARAM_STR);
     $stmt -> execute();
     //echo($test."<br>");
     /*
@@ -27,19 +30,3 @@ catch(PDOException $e){
     exit($e->getMessage());
 }
 ?>
-
-<!-- test -->
-<!--
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>testcalculation</title>
-</head>
-<body>
-    <form action="getStudent.php" method="post">
-    <input type="hidden" name="test" value="testdata">
-    <input type="submit" value="get">
-    </form>
-</body>
-</html>
--->
