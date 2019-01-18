@@ -56,7 +56,7 @@ try{
         }
         //echo($stunum[$i]." ".$class0." ".$class1." ".$class2." ".$class3." ".$class4." ".$class5." ".$class6." ".$class7." ".$class8." ".$class9."<br>");
         //クソコード書きまーーーーーす！！！！！
-        $row = array($stunum[$i]);
+        $row = array((int)$stunum[$i]);
         $row = array_merge($row, array($class0));
         $row = array_merge($row, array($class1));
         $row = array_merge($row, array($class2));
@@ -100,7 +100,7 @@ catch(PDOException $e){
 ?>
 
 <!-- test -->
-<!--
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -114,4 +114,3 @@ catch(PDOException $e){
     </form>
 </body>
 </html>
--->

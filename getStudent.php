@@ -5,7 +5,7 @@ try{
     $pass = "";
     $pdo = new PDO("mysql:host=127.0.0.1;dbname=salesioproapp2018;charset=utf8", $user, $pass);
     //$test = $_POST["test"];
-    $sql = "SELECT `student_id`,`name` FROM `student`;";
+    $sql = "SELECT * FROM `student`;";
     $stmt = $pdo->prepare($sql);
     $stmt -> execute();
     //echo($test."<br>");
