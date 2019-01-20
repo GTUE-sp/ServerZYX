@@ -24,4 +24,5 @@ catch(PDOException $e){
     echo("<p>500 Inertnal Server Error</p>");
     exit($e->getMessage());
 }
+
 ?>
