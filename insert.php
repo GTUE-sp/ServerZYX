@@ -6,6 +6,12 @@ try{
     $pdo = new PDO("mysql:host=127.0.0.1;dbname=salesioproapp2018;charset=utf8", $user, $pass);
     $student_id = $_POST["student_id"];
     $absent_day = date("Y-m-d", strtotime($_POST["absent_day"]));
+    //強引なupdate
+    $sql = "DELETE FROM attendance WHERE absent_day = :absent_day AND student_id = :student_id";
+    $stmt = $pdo->prepare($sql);
+    $stmt -> bindValue(":student_id", $student_id, PDO::PARAM_STR);
+    $stmt -> bindValue(":absent_day", $absent_day, PDO::PARAM_STR);
+    $stmt -> execute();
     //どうしてこうなった
     $class0 = $_POST["class0"];
     $class1 = $_POST["class1"];

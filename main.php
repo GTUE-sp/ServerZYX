@@ -19,10 +19,10 @@ if(!isset($_SESSION["name"])){	/*ログインしていないとき*/
 <body>
 
 とりあえず仮置き<br>
-
+ここに出席簿のやつを置け
+<!--
 <table border="1">
 	<tr>
-		<!--<td rowspan="3" colspan="4"></td>-->
 		<td></td>
 		<td></td>
 		<td></td>
@@ -42,23 +42,9 @@ if(!isset($_SESSION["name"])){	/*ログインしていないとき*/
 		<td>
 			<p class="name">HR</p>
 		</td>
-		<!--
-		<td colspan="2">
-			<p class="name">英語</p>
-		</td>
-		<td colspan="2">
-			<p class="name">信号処理</p>
-		</td>
-		<td colspan="2">
-			<p class="name">体育</p>
-		</td>
-		<td colspan="2">
-			<p class="name"></p>
-		</td>
-
-		-->
+		
 		<?php
-
+		/*
 		try{
 			$user = "proapp5cs2018";
 			$pass = "";
@@ -70,14 +56,14 @@ if(!isset($_SESSION["name"])){	/*ログインしていないとき*/
 			$stmt -> bindValue(":d", $week[$day], PDO::PARAM_STR);
 			$stmt -> execute();
 			//echo($test."<br>");
-			/*
-			while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
+			
+			//while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
 				//var_dump($row);
 				//echo($row["student_id"]." ".$row["name"]);
-				echo("<br>");
+				//echo("<br>");
 				//echo($test."<br>");
-			}
-			*/
+			//}
+			
 			$row = $stmt -> fetch(PDO::FETCH_ASSOC);
 			echo("<td colspan=\"2\"><p class=\"name\">".$row["cla1"]."</p>");
 			echo("<td colspan=\"2\"><p class=\"name\">".$row["cla3"]."</p>");
@@ -116,12 +102,12 @@ if(!isset($_SESSION["name"])){	/*ログインしていないとき*/
 			echo("<p>500 Inertnal Server Error</p>");
 			exit($e->getMessage());
 		}
-
+*/
 		?>
 
 	
 </table>
-
+-->
 
 
 
