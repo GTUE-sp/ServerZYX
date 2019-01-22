@@ -109,3 +109,19 @@ catch(PDOException $e){
 }
 
 ?>
+
+<!-- test -->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>testcalculation</title>
+</head>
+<body>
+    <form action="calc.php" method="post">
+    <input type="date" name="start" min="2017-01-01" max="2019-03-31">
+    <input type="date" name="end">
+    <input type="submit" value="test it">
+    </form>
+</body>
+</html>
