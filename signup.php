@@ -3,7 +3,7 @@
 session_start();
 
 if(isset($_SESSION["name"])){	/*すでにログインしているとき*/
-	header("location: main.php");
+	//header("location: http://localhost:8080");
 }
 
 if(isset($_POST["SIGNUP"])){
@@ -39,7 +39,7 @@ if(isset($_POST["SIGNUP"])){
 	
 				$_SESSION["name"] = $new_usr;
 				print("ユーザ登録に成功しました<br>
-				<a href='main.php'>こちら</a>のリンクより移動してください");
+				<a href='http://localhost:8080'>こちら</a>のリンクより移動してください");
 				exit(1);
 			}
 	

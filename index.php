@@ -2,9 +2,11 @@
 <?php
 session_start();
 
-if(isset($_SESSION["name"])){	/*すでにログインしているとき*/
+/*
+if(isset($_SESSION["name"])){	//すでにログインしているとき
 	header("location: main.php");
 }
+*/
 
 
 if(isset($_POST["LOGIN"])){
@@ -35,7 +37,7 @@ if(isset($_POST["LOGIN"])){
 	$row = $stmt->fetch(PDO::FETCH_ASSOC);
 	if($th_pas === $row["password"]){
 		$_SESSION["name"] = $th_usr;
-		header("location: main.php");
+		header("location: http://localhost:8080");
 	}else{
 		print('<p>Error:ログインに失敗しました<br>	
 		そのようなユーザIDは存在しないか、パスワードが間違っています</p>');
