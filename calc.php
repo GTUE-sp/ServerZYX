@@ -13,8 +13,22 @@ try{
     }
     //var_dump($stunum);
     //echo("<br>");
+    
     $startday = date("Y-m-d", strtotime($_POST["start"]));
+    error_log($_POST["start"]);
+    error_log($startday);
     $endday = date("Y-m-d", strtotime($_POST["end"]));
+    error_log($_POST["end"]);
+    error_log($endday);
+    
+    /*
+    $startday = date("Y-m-d", strtotime($_GET["start"]));
+    error_log($_GET["start"]);
+    error_log($startday);
+    $endday = date("Y-m-d", strtotime($_GET["end"]));
+    error_log($_GET["end"]);
+    error_log($endday);
+    */
     //$sql = "SELECT * FROM attendance WHERE absent_day >= :startday AND absent_day <= :endday ORDER BY cast(student_id as signed)";
     //$sql = "SELECT * FROM attendance WHERE absent_day >= :startday AND absent_day <= :endday ORDER BY student_id";
     //echo("00000 0 1 2 3 4 5 6 7 8 9<br>");
@@ -78,12 +92,15 @@ try{
         $row = array_merge($row, array($class9));
         $row = array_merge($row, array($delay));
         $row = array_merge($row, array($absent_num));
+        //error_log(print_r($row, TRUE));
         //var_dump($row);
         //echo("<br>");
         array_push($rows, $row);
         
     }
     //var_dump($rows);
+    //error_log(print_r($rows, TRUE));
+    //error_log(json_encode($rows, JSON_UNESCAPED_UNICODE));
     header("Access-Control-Allow-Origin: *");
     echo(json_encode($rows, JSON_UNESCAPED_UNICODE));
     /*
