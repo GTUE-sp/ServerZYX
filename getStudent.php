@@ -27,19 +27,3 @@ catch(PDOException $e){
     exit($e->getMessage());
 }
 ?>
-
-<!-- test -->
-<!--
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>testcalculation</title>
-</head>
-<body>
-    <form action="getStudent.php" method="post">
-    <input type="hidden" name="test" value="testdata">
-    <input type="submit" value="get">
-    </form>
-</body>
-</html>
--->
