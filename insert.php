@@ -41,6 +41,7 @@ try{
     $stmt -> bindValue(":class9", $class9, PDO::PARAM_STR);
     $stmt -> bindValue(":remarks", $remarks, PDO::PARAM_STR);
     $stmt -> execute();
+    header("Access-Control-Allow-Origin: *");
 
 }
 catch(PDOException $e){
